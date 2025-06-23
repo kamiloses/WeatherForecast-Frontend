@@ -1,7 +1,7 @@
-export interface DailyDto {
+export interface DailyWeatherForecast {
   time: string[];
-  weather_code: number[];
-  temperature_2m_max: number[];
-  temperature_2m_min: number[];
-  sunshine_duration: number[];
+  weatherCode: number[];
+  temperatureMax: number[];
+  temperatureMin: number[];
+  estimatedEnergyKWh: number[];
 }

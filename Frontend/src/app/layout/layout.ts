@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {DailyDto} from '../model/daily-model';
 import {ActivatedRoute, Router} from '@angular/router';
-import {WeatherResponseDto} from '../model/weather-response';
+import {DailyWeatherForecast} from '../model/daily-model';
 
 @Component({
   selector: 'app-layout',
@@ -13,7 +11,7 @@ import {WeatherResponseDto} from '../model/weather-response';
 })
 export class Layout implements OnInit {
 
-  weatherResponse!:WeatherResponseDto;
+  dailyForecast!:DailyWeatherForecast;
 
 
   constructor(private route: ActivatedRoute) {}
@@ -21,8 +19,23 @@ export class Layout implements OnInit {
   ngOnInit() {
      this.route.data.subscribe(
       data=>{
-        console.log("HEJ"+data["weatherResponse"])
-        this.weatherResponse=data["weatherResponse"];
+        console.log("HEJ"+data["dailyWeather"])
+        this.dailyForecast=data["dailyWeather"];
       })
 }
+  getWeatherIcon(code: number): string {
+    if (code >= 0 && code <= 1) return '☀️';
+    if (code === 2) return '🌤️';
+    if (code === 3) return '☁️';
+    if (code >= 45 && code <= 48) return '🌫️';
+    if (code >= 51 && code <= 57) return '🌦️';
+    if (code >= 61 && code <= 67) return '🌧️';
+    if (code >= 71 && code <= 77) return '❄️';
+    if (code >= 80 && code <= 82) return '🌧️';
+    if (code >= 85 && code <= 86) return '🌨️';
+    if (code === 95) return '⛈️';
+    if (code === 96 || code === 99) return '🌩️';
+    return '❓';
+  }
+
 }

@@ -11,46 +11,46 @@
 <div class="weather-container">
 
   <div class="day-column">
-    <div class="date">{{weatherResponse.daily.time[0] }}</div>
-    <div class="weather-icon">☀️</div>
-    <div><span class="temp-max">25°C</span> / <span class="temp-min">15°C</span></div>
-    <div class="energy">Energia: 5 kWh</div>
+    <div class="date">{{dailyForecast.time[0] }}</div>
+    <div class="weather-icon">{{ getWeatherIcon(dailyForecast.weatherCode[0])}}</div>
+    <div><span class="temp-min">{{dailyForecast.temperatureMin[0]}}&deg;C</span> / <span class="temp-max">{{dailyForecast.temperatureMax[0]}}&deg;C</span></div>
+    <div class="energy">Energia: {{dailyForecast.estimatedEnergyKWh[0]}} kWh</div>
   </div>
   <div class="day-column">
-    <div class="date">{{weatherResponse.daily.time[1] }}</div>
-    <div class="weather-icon">🌤️</div>
-    <div><span class="temp-max">23°C</span> / <span class="temp-min">14°C</span></div>
-    <div class="energy">Energia: 4.7 kWh</div>
+    <div class="date">{{dailyForecast.time[1] }}</div>
+    <div class="weather-icon">{{ getWeatherIcon(dailyForecast.weatherCode[1])}}</div>
+    <div><span class="temp-min">{{dailyForecast.temperatureMin[1]}}&deg;C</span> / <span class="temp-max">{{dailyForecast.temperatureMax[1]}}&deg;C</span></div>
+    <div class="energy">Energia: {{dailyForecast.estimatedEnergyKWh[1]}} kWh</div>
   </div>
   <div class="day-column">
-    <div class="date">{{weatherResponse.daily.time[2] }}</div>
-    <div class="weather-icon">⛅</div>
-    <div><span class="temp-max">22°C</span> / <span class="temp-min">13°C</span></div>
-    <div class="energy">Energia: 4.2 kWh</div>
+    <div class="date">{{dailyForecast.time[2] }}</div>
+    <div class="weather-icon">{{ getWeatherIcon(dailyForecast.weatherCode[2])}}</div>
+    <div><span class="temp-min">{{dailyForecast.temperatureMin[2]}}&deg;C</span> / <span class="temp-max">{{dailyForecast.temperatureMax[2]}}&deg;C</span></div>
+    <div class="energy">Energia: {{dailyForecast.estimatedEnergyKWh[2]}} kWh</div>
   </div>
   <div class="day-column">
-    <div class="date">{{weatherResponse.daily.time[3] }}</div>
-    <div class="weather-icon">🌧️</div>
-    <div><span class="temp-max">19°C</span> / <span class="temp-min">11°C</span></div>
-    <div class="energy">Energia: 3.1 kWh</div>
+    <div class="date">{{dailyForecast.time[3] }}</div>
+    <div class="weather-icon">{{ getWeatherIcon(dailyForecast.weatherCode[3])}}</div>
+    <div><span class="temp-min">{{dailyForecast.temperatureMin[3]}}&deg;C</span> / <span class="temp-max">{{dailyForecast.temperatureMax[3]}}&deg;C</span></div>
+    <div class="energy">Energia: {{dailyForecast.estimatedEnergyKWh[3]}} kWh</div>
   </div>
   <div class="day-column">
-    <div class="date">{{weatherResponse.daily.time[4] }}</div>
-    <div class="weather-icon">☀️</div>
-    <div><span class="temp-max">26°C</span> / <span class="temp-min">16°C</span></div>
-    <div class="energy">Energia: 5.5 kWh</div>
+    <div class="date">{{dailyForecast.time[4] }}</div>
+    <div class="weather-icon">{{ getWeatherIcon(dailyForecast.weatherCode[4])}}</div>
+    <div><span class="temp-min">{{dailyForecast.temperatureMin[4]}}&deg;C</span> / <span class="temp-max">{{dailyForecast.temperatureMax[4]}}&deg;C</span></div>
+    <div class="energy">Energia: {{dailyForecast.estimatedEnergyKWh[4]}} kWh</div>
   </div>
   <div class="day-column">
-    <div class="date">{{weatherResponse.daily.time[5] }}</div>
-    <div class="weather-icon">🌩️</div>
-    <div><span class="temp-max">20°C</span> / <span class="temp-min">12°C</span></div>
-    <div class="energy">Energia: 3.5 kWh</div>
+    <div class="date">{{dailyForecast.time[5] }}</div>
+    <div class="weather-icon">{{ getWeatherIcon(dailyForecast.weatherCode[5])}}</div>
+    <div><span class="temp-min">{{dailyForecast.temperatureMin[5]}}&deg;C</span> / <span class="temp-max">{{dailyForecast.temperatureMax[5]}}&deg;C</span></div>
+    <div class="energy">Energia: {{dailyForecast.estimatedEnergyKWh[5]}} kWh</div>
   </div>
   <div class="day-column">
-    <div class="date">{{weatherResponse.daily.time[6] }}</div>
-    <div class="weather-icon">🌥️</div>
-    <div><span class="temp-max">21°C</span> / <span class="temp-min">13°C</span></div>
-    <div class="energy">Energia: 4.0 kWh</div>
+    <div class="date">{{dailyForecast.time[6] }}</div>
+    <div class="weather-icon">{{ getWeatherIcon(dailyForecast.weatherCode[6])}}</div>
+    <div><span class="temp-min">{{dailyForecast.temperatureMin[6]}}&deg;C</span> / <span class="temp-max">{{dailyForecast.temperatureMax[6]}}&deg;C</span></div>
+    <div class="energy">Energia: {{dailyForecast.estimatedEnergyKWh[6]}} kWh</div>
   </div>
 </div>
 

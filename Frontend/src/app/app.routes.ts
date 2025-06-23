@@ -6,6 +6,6 @@ export const routes: Routes = [
   {
     path: '',
     component: Layout,
-    resolve: { weatherResponse: ForecastResolver }
+    resolve: { dailyWeather: ForecastResolver }
   }
 ];
