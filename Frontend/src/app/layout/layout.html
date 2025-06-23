@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prognoza Pogody - Szablon</title>
+  <link rel="stylesheet" href="layout.css" />
+</head>
+<body>
+
+<div class="weather-container">
+
+  <div class="day-column">
+    <div class="date">{{weatherResponse.daily.time[0] }}</div>
+    <div class="weather-icon">☀️</div>
+    <div><span class="temp-max">25°C</span> / <span class="temp-min">15°C</span></div>
+    <div class="energy">Energia: 5 kWh</div>
+  </div>
+  <div class="day-column">
+    <div class="date">{{weatherResponse.daily.time[1] }}</div>
+    <div class="weather-icon">🌤️</div>
+    <div><span class="temp-max">23°C</span> / <span class="temp-min">14°C</span></div>
+    <div class="energy">Energia: 4.7 kWh</div>
+  </div>
+  <div class="day-column">
+    <div class="date">{{weatherResponse.daily.time[2] }}</div>
+    <div class="weather-icon">⛅</div>
+    <div><span class="temp-max">22°C</span> / <span class="temp-min">13°C</span></div>
+    <div class="energy">Energia: 4.2 kWh</div>
+  </div>
+  <div class="day-column">
+    <div class="date">{{weatherResponse.daily.time[3] }}</div>
+    <div class="weather-icon">🌧️</div>
+    <div><span class="temp-max">19°C</span> / <span class="temp-min">11°C</span></div>
+    <div class="energy">Energia: 3.1 kWh</div>
+  </div>
+  <div class="day-column">
+    <div class="date">{{weatherResponse.daily.time[4] }}</div>
+    <div class="weather-icon">☀️</div>
+    <div><span class="temp-max">26°C</span> / <span class="temp-min">16°C</span></div>
+    <div class="energy">Energia: 5.5 kWh</div>
+  </div>
+  <div class="day-column">
+    <div class="date">{{weatherResponse.daily.time[5] }}</div>
+    <div class="weather-icon">🌩️</div>
+    <div><span class="temp-max">20°C</span> / <span class="temp-min">12°C</span></div>
+    <div class="energy">Energia: 3.5 kWh</div>
+  </div>
+  <div class="day-column">
+    <div class="date">{{weatherResponse.daily.time[6] }}</div>
+    <div class="weather-icon">🌥️</div>
+    <div><span class="temp-max">21°C</span> / <span class="temp-min">13°C</span></div>
+    <div class="energy">Energia: 4.0 kWh</div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-item">Skrajne temperatury: 19°C - 26°C</div>
+  <div class="footer-item">Średnie ciśnienie: 1013 hPa</div>
+  <div class="footer-item">Średni czas ekspozycji na słońce: 6h</div>
+  <div class="footer-item">Komentarz: Tydzień ze zmienną pogodą, z przewagą słońca.</div>
+</footer>
+
+</body>
+</html>
