@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-leaflet-map',
@@ -9,6 +10,7 @@ import * as L from 'leaflet';
 export class LeafletMap implements OnInit {
 
   private map!: L.Map;
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.initMap();
@@ -30,6 +32,13 @@ export class LeafletMap implements OnInit {
     this.map.on('click', (e: L.LeafletMouseEvent) => {
       const lat = e.latlng.lat;
       const lng = e.latlng.lng;
+      console.log(`Coordinates: Latitude = ${lat}, Longitude = ${lng}`);
+
+
+      this.router.navigate([], {
+        queryParams: { latitude: lat, longitude: lng },
+        queryParamsHandling: 'merge',
+      });
 
       fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&email=kamil.kurzaj04@gmail.com`)
         .then(res => res.json())

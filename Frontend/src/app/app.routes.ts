@@ -9,6 +9,7 @@ export const routes: Routes = [
     component: Layout,
     resolve: { dailyWeather: DailyWeatherResolver,
               weeklyWeather:WeeklyWeatherResolver
-    }
+    },
+    runGuardsAndResolvers: 'paramsOrQueryParamsChange' //todo zapamiętaj
   }
 ];
