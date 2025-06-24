@@ -9,6 +9,6 @@ export class ForecastResolverV2 implements Resolve<WeeklyWeatherForecast> {
   constructor(private http: HttpClient) {}
 
   resolve(): Observable<WeeklyWeatherForecast> {
-    return this.http.get<WeeklyWeatherForecast>('http://localhost:8080/weatherApi/hey2');
+    return this.http.get<WeeklyWeatherForecast>('http://localhost:8080/api/v1/weather/weekly?longitude=30&latitude=30');
   }
 }

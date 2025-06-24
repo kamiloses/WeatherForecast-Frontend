@@ -10,6 +10,6 @@ export class ForecastResolver implements Resolve<DailyWeatherForecast> {
   constructor(private http: HttpClient) {}
 
   resolve(): Observable<DailyWeatherForecast> {
-    return this.http.get<DailyWeatherForecast>('http://localhost:8080/weatherApi/hey');
+    return this.http.get<DailyWeatherForecast>('http://localhost:8080/api/v1/weather/daily?longitude=30&latitude=30');
   }
 }

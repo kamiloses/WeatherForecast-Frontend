@@ -49,3 +49,17 @@ footer {
 footer .footer-item {
   margin-bottom: 8px;
 }
+.map-wrapper {
+  margin-top: 30px;
+  height: 400px;
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+}

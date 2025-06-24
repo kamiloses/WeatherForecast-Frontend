@@ -2,10 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {DailyWeatherForecast} from '../model/daily-model';
 import {WeeklyWeatherForecast} from '../model/weekly-model';
+import {LeafletMap} from '../leaflet-map/leaflet-map';
 
 @Component({
   selector: 'app-layout',
-  imports: [],
+  imports: [
+    LeafletMap
+  ],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
   standalone:true
