@@ -12,7 +12,7 @@ import {DailyWeatherForecastModel} from './daily-model';
 export class DailyWeatherForecast  implements OnInit {
 
   dailyForecast!:DailyWeatherForecastModel;
-
+  location: string = 'Cairo, Cairo Governorate, Egypt';
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -20,7 +20,14 @@ export class DailyWeatherForecast  implements OnInit {
       data=>{
         this.dailyForecast=data["dailyWeather"];
 
-      })
+      });
+
+    this.route.queryParamMap.subscribe(params => {
+      const loc = params.get('location');
+      if (loc) {
+        this.location = loc;
+      }
+    });
   }
   getWeatherIcon(code: number): string {
     if (code >= 0 && code <= 1) return '☀️';

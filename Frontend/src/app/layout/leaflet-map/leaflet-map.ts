@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-leaflet-map',
@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 export class LeafletMap implements OnInit {
 
   private map!: L.Map;
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {
@@ -32,30 +33,35 @@ export class LeafletMap implements OnInit {
     this.map.on('click', (e: L.LeafletMouseEvent) => {
       const lat = e.latlng.lat;
       const lng = e.latlng.lng;
+
       console.log(`Coordinates: Latitude = ${lat}, Longitude = ${lng}`);
-
-
-      this.router.navigate([], {
-        queryParams: { latitude: lat, longitude: lng },
-        queryParamsHandling: 'merge',
-      });
 
       fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&email=kamil.kurzaj04@gmail.com`)
         .then(res => res.json())
         .then(data => {
-          const road = data.address?.road ?? 'No street found at this location';
-          console.log(`Street: ${road}`);
-          console.log('Full address:', data.display_name);
+          const city = data.address?.city ?? data.address?.town ?? data.address?.village ?? '';
+          const state = data.address?.state ?? '';
+          const country = data.address?.country ?? '';
+
+          const locationName = [city, state, country].filter(Boolean).join(', ') || 'Cairo, Cairo Governorate, Egypt';
 
           L.popup()
             .setLatLng([lat, lng])
-            .setContent(`<b>Address:</b><br>${data.display_name}`)
+            .setContent(`<b>Adres:</b><br>${locationName}`)
             .openOn(this.map);
+
+          this.router.navigate([], {
+            queryParams: {
+              latitude: lat,
+              longitude: lng,
+              location: locationName
+            },
+            queryParamsHandling: 'merge',
+          });
         })
         .catch(err => {
-          console.error('Error fetching address:', err);
+          console.error('Error with fetching localization:', err);
         });
     });
-
   }
 }
