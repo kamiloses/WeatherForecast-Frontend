@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {DailyWeatherForecast} from '../model/daily-model';
+import {WeeklyWeatherForecast} from '../model/weekly-model';
 
 @Component({
   selector: 'app-layout',
@@ -12,15 +13,17 @@ import {DailyWeatherForecast} from '../model/daily-model';
 export class Layout implements OnInit {
 
   dailyForecast!:DailyWeatherForecast;
-
+  weeklyForecast!:WeeklyWeatherForecast;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
      this.route.data.subscribe(
       data=>{
-        console.log("HEJ"+data["dailyWeather"])
         this.dailyForecast=data["dailyWeather"];
+         this.weeklyForecast=data["weeklyWeather"];
+         console.log("HEJ"+this.weeklyForecast);
+
       })
 }
   getWeatherIcon(code: number): string {

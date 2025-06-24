@@ -55,10 +55,10 @@
 </div>
 
 <footer>
-  <div class="footer-item">Skrajne temperatury: 19°C - 26°C</div>
-  <div class="footer-item">Średnie ciśnienie: 1013 hPa</div>
-  <div class="footer-item">Średni czas ekspozycji na słońce: 6h</div>
-  <div class="footer-item">Komentarz: Tydzień ze zmienną pogodą, z przewagą słońca.</div>
+  <div class="footer-item">Skrajne temperatury: {{weeklyForecast.minTemperature}}°C - {{weeklyForecast.maxTemperature}}°C</div>
+  <div class="footer-item">Średnie ciśnienie: {{weeklyForecast.averagePressure}} hPa</div>
+  <div class="footer-item">Średni czas ekspozycji na słońce: {{weeklyForecast.averageSunshineDuration}}h</div>
+  <div class="footer-item">Komentarz: {{weeklyForecast.rainSummary}}.</div>
 </footer>
 
 </body>
