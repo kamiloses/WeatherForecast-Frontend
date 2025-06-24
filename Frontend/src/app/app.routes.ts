@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
 import {Layout} from './layout/layout';
-import {ForecastResolver} from './layout/resolver';
-import {ForecastResolverV2} from './layout/resolver2';
+import {WeeklyWeatherResolver} from './layout/weekly-weather-forecast/weeklyWeatherResolver';
+import {DailyWeatherResolver} from './layout/daily-weather-forecast/dailyWeatherResolver';
 
 export const routes: Routes = [
   {
     path: '',
     component: Layout,
-    resolve: { dailyWeather: ForecastResolver,
-              weeklyWeather:ForecastResolverV2
+    resolve: { dailyWeather: DailyWeatherResolver,
+              weeklyWeather:WeeklyWeatherResolver
     }
   }
 ];

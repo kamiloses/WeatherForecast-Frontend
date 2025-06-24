@@ -1,4 +1,4 @@
-export interface WeeklyWeatherForecast {
+export interface WeeklyWeatherForecastModel {
   averagePressure: number;
   averageSunshineDuration: number;
   minTemperature: number;

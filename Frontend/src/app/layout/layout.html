@@ -3,63 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prognoza Pogody - Szablon</title>
+  <title>Weather-Forecast</title>
   <link rel="stylesheet" href="layout.css" />
 </head>
 <body>
 
-<div class="weather-container">
+<div><h1> Kępno/Polska</h1> </div>
+<app-daily-weather-forecast></app-daily-weather-forecast>
 
-  <div class="day-column">
-    <div class="date">{{dailyForecast.time[0] }}</div>
-    <div class="weather-icon">{{ getWeatherIcon(dailyForecast.weatherCode[0])}}</div>
-    <div><span class="temp-min">{{dailyForecast.temperatureMin[0]}}&deg;C</span> / <span class="temp-max">{{dailyForecast.temperatureMax[0]}}&deg;C</span></div>
-    <div class="energy">Energia: {{dailyForecast.estimatedEnergyKWh[0]}} kWh</div>
-  </div>
-  <div class="day-column">
-    <div class="date">{{dailyForecast.time[1] }}</div>
-    <div class="weather-icon">{{ getWeatherIcon(dailyForecast.weatherCode[1])}}</div>
-    <div><span class="temp-min">{{dailyForecast.temperatureMin[1]}}&deg;C</span> / <span class="temp-max">{{dailyForecast.temperatureMax[1]}}&deg;C</span></div>
-    <div class="energy">Energia: {{dailyForecast.estimatedEnergyKWh[1]}} kWh</div>
-  </div>
-  <div class="day-column">
-    <div class="date">{{dailyForecast.time[2] }}</div>
-    <div class="weather-icon">{{ getWeatherIcon(dailyForecast.weatherCode[2])}}</div>
-    <div><span class="temp-min">{{dailyForecast.temperatureMin[2]}}&deg;C</span> / <span class="temp-max">{{dailyForecast.temperatureMax[2]}}&deg;C</span></div>
-    <div class="energy">Energia: {{dailyForecast.estimatedEnergyKWh[2]}} kWh</div>
-  </div>
-  <div class="day-column">
-    <div class="date">{{dailyForecast.time[3] }}</div>
-    <div class="weather-icon">{{ getWeatherIcon(dailyForecast.weatherCode[3])}}</div>
-    <div><span class="temp-min">{{dailyForecast.temperatureMin[3]}}&deg;C</span> / <span class="temp-max">{{dailyForecast.temperatureMax[3]}}&deg;C</span></div>
-    <div class="energy">Energia: {{dailyForecast.estimatedEnergyKWh[3]}} kWh</div>
-  </div>
-  <div class="day-column">
-    <div class="date">{{dailyForecast.time[4] }}</div>
-    <div class="weather-icon">{{ getWeatherIcon(dailyForecast.weatherCode[4])}}</div>
-    <div><span class="temp-min">{{dailyForecast.temperatureMin[4]}}&deg;C</span> / <span class="temp-max">{{dailyForecast.temperatureMax[4]}}&deg;C</span></div>
-    <div class="energy">Energia: {{dailyForecast.estimatedEnergyKWh[4]}} kWh</div>
-  </div>
-  <div class="day-column">
-    <div class="date">{{dailyForecast.time[5] }}</div>
-    <div class="weather-icon">{{ getWeatherIcon(dailyForecast.weatherCode[5])}}</div>
-    <div><span class="temp-min">{{dailyForecast.temperatureMin[5]}}&deg;C</span> / <span class="temp-max">{{dailyForecast.temperatureMax[5]}}&deg;C</span></div>
-    <div class="energy">Energia: {{dailyForecast.estimatedEnergyKWh[5]}} kWh</div>
-  </div>
-  <div class="day-column">
-    <div class="date">{{dailyForecast.time[6] }}</div>
-    <div class="weather-icon">{{ getWeatherIcon(dailyForecast.weatherCode[6])}}</div>
-    <div><span class="temp-min">{{dailyForecast.temperatureMin[6]}}&deg;C</span> / <span class="temp-max">{{dailyForecast.temperatureMax[6]}}&deg;C</span></div>
-    <div class="energy">Energia: {{dailyForecast.estimatedEnergyKWh[6]}} kWh</div>
-  </div>
-</div>
-
-<footer>
-  <div class="footer-item">Skrajne temperatury: {{weeklyForecast.minTemperature}}°C - {{weeklyForecast.maxTemperature}}°C</div>
-  <div class="footer-item">Średnie ciśnienie: {{weeklyForecast.averagePressure}} hPa</div>
-  <div class="footer-item">Średni czas ekspozycji na słońce: {{weeklyForecast.averageSunshineDuration}}h</div>
-  <div class="footer-item">Komentarz: {{weeklyForecast.rainSummary}}.</div>
-</footer>
+<app-weekly-weather-forecast></app-weekly-weather-forecast>
 
 
 <div class="map-wrapper">

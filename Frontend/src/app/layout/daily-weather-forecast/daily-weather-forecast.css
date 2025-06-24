@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f5f8fa;
+}
+.weather-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.day-column {
+  background-color: #e0e7ff;
+  border: 1px solid #a5b4fc;
+  border-radius: 8px;
+  width: 13%;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.day-column .date {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.weather-icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.temp-max {
+  color: #e02424;
+  font-weight: bold;
+}
+.temp-min {
+  color: #1e40af;
+  font-weight: bold;
+}
+.energy {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}

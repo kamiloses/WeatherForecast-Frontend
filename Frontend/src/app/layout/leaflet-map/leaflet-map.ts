@@ -30,7 +30,23 @@ export class LeafletMap implements OnInit {
     this.map.on('click', (e: L.LeafletMouseEvent) => {
       const lat = e.latlng.lat;
       const lng = e.latlng.lng;
-      console.log(`Kliknięto: Szerokość = ${lat}, Długość = ${lng}`);
+
+      fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json&email=kamil.kurzaj04@gmail.com`)
+        .then(res => res.json())
+        .then(data => {
+          const road = data.address?.road ?? 'No street found at this location';
+          console.log(`Street: ${road}`);
+          console.log('Full address:', data.display_name);
+
+          L.popup()
+            .setLatLng([lat, lng])
+            .setContent(`<b>Address:</b><br>${data.display_name}`)
+            .openOn(this.map);
+        })
+        .catch(err => {
+          console.error('Error fetching address:', err);
+        });
     });
+
   }
 }

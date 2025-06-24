@@ -1,4 +1,4 @@
-export interface DailyWeatherForecast {
+export interface DailyWeatherForecastModel {
   time: string[];
   weatherCode: number[];
   temperatureMax: number[];
